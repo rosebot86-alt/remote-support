@@ -1,0 +1,1482 @@
+{
+  "users": [
+    {
+      "id": "737b788a-611e-40d5-8855-04cf4c43ae9d",
+      "email": "testadmin_1788152392340@support.com",
+      "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+      "role": "admin",
+      "created_at": "2026-08-31T04:59:52.345Z"
+    },
+    {
+      "id": "b80e4b7a-42f9-4e07-b6f7-59ce19bef19b",
+      "email": "testadmin_1788153497942@support.com",
+      "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+      "role": "admin",
+      "created_at": "2026-08-31T05:18:17.947Z"
+    },
+    {
+      "id": "admin-default-id-001",
+      "email": "admin@remotesupport.com",
+      "password_hash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "role": "admin",
+      "created_at": "2026-08-31T05:21:09.575Z"
+    },
+    {
+      "id": "74fa3f8b-0025-4306-8e37-569f9f92c627",
+      "email": "testadmin_1788154199868@support.com",
+      "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+      "role": "admin",
+      "created_at": "2026-08-31T05:29:59.880Z"
+    }
+  ],
+  "devices": [
+    {
+      "id": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "userId": "737b788a-611e-40d5-8855-04cf4c43ae9d",
+      "deviceName": "Galaxy A15",
+      "androidVersion": "Android 14",
+      "supportCode": "TEST-1048",
+      "capabilities": {
+        "screenCapture": true,
+        "accessibility": true
+      },
+      "status": "online",
+      "screenStatus": "ON",
+      "lastSeen": "2026-08-31T04:59:52.352Z",
+      "createdAt": "2026-08-31T04:59:52.352Z"
+    },
+    {
+      "id": "0001198f-d84f-4d0c-bbb6-a2d33a2e4ca6",
+      "userId": "b80e4b7a-42f9-4e07-b6f7-59ce19bef19b",
+      "deviceName": "Galaxy A15",
+      "androidVersion": "Android 14",
+      "supportCode": "TEST-1048",
+      "capabilities": {
+        "screenCapture": true,
+        "accessibility": true
+      },
+      "status": "online",
+      "screenStatus": "ON",
+      "lastSeen": "2026-08-31T05:18:17.957Z",
+      "createdAt": "2026-08-31T05:18:17.957Z"
+    },
+    {
+      "id": "2387cdaf-ede9-498d-a941-2c307f2e6497",
+      "userId": "74fa3f8b-0025-4306-8e37-569f9f92c627",
+      "deviceName": "Galaxy A15",
+      "androidVersion": "Android 14",
+      "supportCode": "TEST-1048",
+      "capabilities": {
+        "screenCapture": true,
+        "accessibility": true
+      },
+      "status": "online",
+      "screenStatus": "ON",
+      "lastSeen": "2026-08-31T05:29:59.896Z",
+      "createdAt": "2026-08-31T05:29:59.896Z"
+    },
+    {
+      "id": "db261e79-661c-42c2-8075-63a5f07e9b98",
+      "deviceName": "OnePlus NE2211",
+      "androidVersion": "Android 9 (API 28)",
+      "supportCode": "9C7A-1486",
+      "capabilities": {
+        "screenCapture": true,
+        "accessibility": true
+      },
+      "status": "online",
+      "screenStatus": "ON",
+      "lastSeen": "2026-08-31T07:32:15.595Z",
+      "createdAt": "2026-08-31T07:22:14.033Z"
+    },
+    {
+      "id": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3",
+      "deviceName": "Vivo V2545",
+      "androidVersion": "Android 16 (API 36)",
+      "supportCode": "C5E8-D31F",
+      "capabilities": {
+        "screenCapture": true,
+        "accessibility": true
+      },
+      "status": "online",
+      "screenStatus": "ON",
+      "lastSeen": "2026-08-31T08:42:56.923Z",
+      "createdAt": "2026-08-31T07:55:44.418Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "737b788a-611e-40d5-8855-04cf4c43ae9d",
+      "state": "ended",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T04:59:52.370Z",
+      "expiresAt": "2026-08-31T07:59:52.370Z",
+      "endedAt": "2026-08-31T04:59:52.434Z"
+    },
+    {
+      "id": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "deviceId": "0001198f-d84f-4d0c-bbb6-a2d33a2e4ca6",
+      "adminId": "b80e4b7a-42f9-4e07-b6f7-59ce19bef19b",
+      "state": "ended",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:18:17.978Z",
+      "expiresAt": "2026-08-31T08:18:17.978Z",
+      "endedAt": "2026-08-31T05:18:18.029Z"
+    },
+    {
+      "id": "cbcb4f08-99c0-440b-a79b-137b3cbc211c",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:22:00.391Z",
+      "expiresAt": "2026-08-31T08:22:00.391Z",
+      "endedAt": null
+    },
+    {
+      "id": "5617fa49-19b8-449a-93e5-4de6d78a470f",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:22:17.231Z",
+      "expiresAt": "2026-08-31T08:22:17.231Z",
+      "endedAt": null
+    },
+    {
+      "id": "cd3ab69e-f7a2-4dd9-97ef-9584ae269f17",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:24:32.502Z",
+      "expiresAt": "2026-08-31T08:24:32.502Z",
+      "endedAt": null
+    },
+    {
+      "id": "045d3509-56a2-4bc2-898e-73fbb9a76eee",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:25:43.145Z",
+      "expiresAt": "2026-08-31T08:25:43.145Z",
+      "endedAt": null
+    },
+    {
+      "id": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "deviceId": "2387cdaf-ede9-498d-a941-2c307f2e6497",
+      "adminId": "74fa3f8b-0025-4306-8e37-569f9f92c627",
+      "state": "ended",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:29:59.930Z",
+      "expiresAt": "2026-08-31T08:29:59.930Z",
+      "endedAt": "2026-08-31T05:30:00.098Z"
+    },
+    {
+      "id": "1557319a-8602-4345-a4d9-4dd6ae72f244",
+      "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:31:06.281Z",
+      "expiresAt": "2026-08-31T08:31:06.281Z",
+      "endedAt": null
+    },
+    {
+      "id": "00f7b83c-3eb0-4c39-a931-adff817d2194",
+      "deviceId": "0001198f-d84f-4d0c-bbb6-a2d33a2e4ca6",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T05:31:17.178Z",
+      "expiresAt": "2026-08-31T08:31:17.178Z",
+      "endedAt": null
+    },
+    {
+      "id": "14707c94-f782-41fa-98b4-d4b7267df067",
+      "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:23:38.844Z",
+      "expiresAt": "2026-08-31T10:23:38.844Z",
+      "endedAt": null
+    },
+    {
+      "id": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:23:51.439Z",
+      "expiresAt": "2026-08-31T10:23:51.439Z",
+      "endedAt": null
+    },
+    {
+      "id": "72a3c849-b308-40aa-8cda-b3c50eb3b60e",
+      "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:25:16.722Z",
+      "expiresAt": "2026-08-31T10:25:16.722Z",
+      "endedAt": null
+    },
+    {
+      "id": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:29:57.123Z",
+      "expiresAt": "2026-08-31T10:29:57.123Z",
+      "endedAt": null
+    },
+    {
+      "id": "af720c68-2547-4116-90af-fa33852b3094",
+      "deviceId": "db261e79-661c-42c2-8075-63a5f07e9b98",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": true,
+      "startedAt": "2026-08-31T07:31:41.081Z",
+      "expiresAt": "2026-08-31T10:31:41.081Z",
+      "endedAt": null
+    },
+    {
+      "id": "f4a787ca-d3e5-4579-b708-9e5cef9a3653",
+      "deviceId": "db261e79-661c-42c2-8075-63a5f07e9b98",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:32:37.103Z",
+      "expiresAt": "2026-08-31T10:32:37.103Z",
+      "endedAt": null
+    },
+    {
+      "id": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": true,
+      "startedAt": "2026-08-31T07:56:39.044Z",
+      "expiresAt": "2026-08-31T10:56:39.044Z",
+      "endedAt": null
+    },
+    {
+      "id": "1464f34b-b14f-4244-bcc8-71be89f7695b",
+      "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:58:30.255Z",
+      "expiresAt": "2026-08-31T10:58:30.255Z",
+      "endedAt": null
+    },
+    {
+      "id": "3a8396c8-5d3f-4415-bc85-8e30efaf5bf2",
+      "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1",
+      "adminId": "admin-default-id-001",
+      "state": "ended",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:59:01.984Z",
+      "expiresAt": "2026-08-31T10:59:01.984Z",
+      "endedAt": "2026-08-31T07:59:21.502Z"
+    },
+    {
+      "id": "6a390bf0-b78e-457e-a7d7-18d3343a4a39",
+      "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T07:59:24.166Z",
+      "expiresAt": "2026-08-31T10:59:24.166Z",
+      "endedAt": null
+    },
+    {
+      "id": "05073625-173e-4dd7-be15-348902ac04a1",
+      "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:25:58.436Z",
+      "expiresAt": "2026-08-31T11:25:58.436Z",
+      "endedAt": null
+    },
+    {
+      "id": "2b5b2332-244a-4527-813e-d7e6a0e33d54",
+      "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:27:49.703Z",
+      "expiresAt": "2026-08-31T11:27:49.703Z",
+      "endedAt": null
+    },
+    {
+      "id": "a54c5dd6-021f-46f8-94ee-3469601285d1",
+      "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:27:51.097Z",
+      "expiresAt": "2026-08-31T11:27:51.097Z",
+      "endedAt": null
+    },
+    {
+      "id": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3",
+      "adminId": "admin-default-id-001",
+      "state": "ended",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:39:54.327Z",
+      "expiresAt": "2026-08-31T11:39:54.327Z",
+      "endedAt": "2026-08-31T08:42:33.002Z"
+    },
+    {
+      "id": "2b159f3d-4acc-4ef8-b82d-3aa12fc2f4d4",
+      "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3",
+      "adminId": "admin-default-id-001",
+      "state": "viewing",
+      "mode": "view",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:42:35.377Z",
+      "expiresAt": "2026-08-31T11:42:35.377Z",
+      "endedAt": null
+    },
+    {
+      "id": "eff96cc3-6b3f-4213-b0f1-ad8307962961",
+      "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3",
+      "adminId": "admin-default-id-001",
+      "state": "control_active",
+      "mode": "control",
+      "vanishActive": false,
+      "startedAt": "2026-08-31T08:43:16.421Z",
+      "expiresAt": "2026-08-31T11:43:16.421Z",
+      "endedAt": null
+    }
+  ],
+  "authorizations": [],
+  "audit_events": [
+    {
+      "id": "3d68c74b-eb9a-469b-8fb7-79a771277c74",
+      "sessionId": "6a390bf0-b78e-457e-a7d7-18d3343a4a39",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:59:26.801Z"
+    },
+    {
+      "id": "0980026d-af55-49b2-8977-f21b6a3c06f2",
+      "sessionId": "6a390bf0-b78e-457e-a7d7-18d3343a4a39",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:59:24.186Z"
+    },
+    {
+      "id": "e63dcfab-461a-40ae-bb00-bc964d183197",
+      "sessionId": "6a390bf0-b78e-457e-a7d7-18d3343a4a39",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1"
+      },
+      "timestamp": "2026-08-31T07:59:24.170Z"
+    },
+    {
+      "id": "de30f5dc-8620-4ac1-ac68-265c7fdd7f55",
+      "sessionId": "6a390bf0-b78e-457e-a7d7-18d3343a4a39",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "74EB-C76D"
+      },
+      "timestamp": "2026-08-31T07:59:24.168Z"
+    },
+    {
+      "id": "9c93f2b1-522d-4784-9010-14c9d333fc0c",
+      "sessionId": "3a8396c8-5d3f-4415-bc85-8e30efaf5bf2",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_ENDED",
+      "metadata": {
+        "endedAt": "2026-08-31T07:59:21.502Z"
+      },
+      "timestamp": "2026-08-31T07:59:21.504Z"
+    },
+    {
+      "id": "e00fe74c-572c-4af1-ad5d-6f4b13c48723",
+      "sessionId": "3a8396c8-5d3f-4415-bc85-8e30efaf5bf2",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:59:02.008Z"
+    },
+    {
+      "id": "1319634b-e296-4814-9a2d-1be91d886534",
+      "sessionId": "3a8396c8-5d3f-4415-bc85-8e30efaf5bf2",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1"
+      },
+      "timestamp": "2026-08-31T07:59:01.988Z"
+    },
+    {
+      "id": "ec20759d-9439-4773-a9a3-cd39e1d2f46f",
+      "sessionId": "3a8396c8-5d3f-4415-bc85-8e30efaf5bf2",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "74EB-C76D"
+      },
+      "timestamp": "2026-08-31T07:59:01.986Z"
+    },
+    {
+      "id": "28e8872f-e726-45b4-affd-2687ba4657e7",
+      "sessionId": "1464f34b-b14f-4244-bcc8-71be89f7695b",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:58:30.276Z"
+    },
+    {
+      "id": "dd4278e8-8c0c-489d-8aa2-7f6988ca6d83",
+      "sessionId": "1464f34b-b14f-4244-bcc8-71be89f7695b",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1"
+      },
+      "timestamp": "2026-08-31T07:58:30.259Z"
+    },
+    {
+      "id": "0fa4f266-6738-42c8-a040-7f5c06d34f50",
+      "sessionId": "1464f34b-b14f-4244-bcc8-71be89f7695b",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "74EB-C76D"
+      },
+      "timestamp": "2026-08-31T07:58:30.258Z"
+    },
+    {
+      "id": "e1a3cb84-6a53-4821-9c09-8e756a18cc3e",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:58:26.567Z"
+    },
+    {
+      "id": "cdd96a9d-776f-4338-b28c-49ba44248fba",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T07:57:49.349Z"
+    },
+    {
+      "id": "737e7bf0-70c3-44f5-b3b6-21fb5a0a2f2a",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:57:25.535Z"
+    },
+    {
+      "id": "2c08716e-83c5-402a-8423-2695bb404373",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:57:24.361Z"
+    },
+    {
+      "id": "d35a8def-10d3-405d-a8ab-b9d026a0fb57",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:57:23.272Z"
+    },
+    {
+      "id": "90e56b19-1965-4dd5-8a4c-414e4f669f1d",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:56:39.065Z"
+    },
+    {
+      "id": "f6f550c7-0fd0-4fd3-abab-3bc7a3b31c04",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "395bf2a7-a438-487f-ab57-c667f4d0a3e1"
+      },
+      "timestamp": "2026-08-31T07:56:39.049Z"
+    },
+    {
+      "id": "f3129aa2-e7bf-432b-a8ed-7eb79148d061",
+      "sessionId": "bed1220d-43a2-4774-bb48-c96ac145b7a4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "74EB-C76D"
+      },
+      "timestamp": "2026-08-31T07:56:39.047Z"
+    },
+    {
+      "id": "46c3c0b3-6b85-45ea-a83a-ae7f141ec753",
+      "sessionId": "f4a787ca-d3e5-4579-b708-9e5cef9a3653",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:32:37.112Z"
+    },
+    {
+      "id": "757364b7-ebdc-4ec3-8403-7cc495c08d10",
+      "sessionId": "f4a787ca-d3e5-4579-b708-9e5cef9a3653",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "db261e79-661c-42c2-8075-63a5f07e9b98"
+      },
+      "timestamp": "2026-08-31T07:32:37.105Z"
+    },
+    {
+      "id": "74efd13c-e6be-4305-a713-3d0eb8a445d6",
+      "sessionId": "f4a787ca-d3e5-4579-b708-9e5cef9a3653",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9C7A-1486"
+      },
+      "timestamp": "2026-08-31T07:32:37.104Z"
+    },
+    {
+      "id": "c81983c3-52bf-4b95-bb39-0a35bf61ef96",
+      "sessionId": "af720c68-2547-4116-90af-fa33852b3094",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T07:32:03.820Z"
+    },
+    {
+      "id": "02b89c4a-dd04-46f0-9d6d-4392cb4aea9a",
+      "sessionId": "af720c68-2547-4116-90af-fa33852b3094",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:31:41.097Z"
+    },
+    {
+      "id": "777dfb61-79ef-41a6-8e5b-bf898fadfac6",
+      "sessionId": "af720c68-2547-4116-90af-fa33852b3094",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "db261e79-661c-42c2-8075-63a5f07e9b98"
+      },
+      "timestamp": "2026-08-31T07:31:41.085Z"
+    },
+    {
+      "id": "ebdbdc25-9f32-4360-9966-f60286f57ec8",
+      "sessionId": "af720c68-2547-4116-90af-fa33852b3094",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9C7A-1486"
+      },
+      "timestamp": "2026-08-31T07:31:41.084Z"
+    },
+    {
+      "id": "8194dceb-768d-4f46-aa8a-ad2b4f787d48",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:30:14.142Z"
+    },
+    {
+      "id": "7e8640cf-d7d9-4095-8c16-7d664e061cef",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:30:13.443Z"
+    },
+    {
+      "id": "12fdafc8-690a-4192-9c85-e50ce6cffe81",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:30:12.308Z"
+    },
+    {
+      "id": "56d744c8-98bd-4ec7-b8d6-00349d34e237",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:29:57.137Z"
+    },
+    {
+      "id": "197b8a97-e778-460e-91ab-74fc5f2870dd",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6"
+      },
+      "timestamp": "2026-08-31T07:29:57.125Z"
+    },
+    {
+      "id": "5305d078-afe3-45d0-b029-25102507943b",
+      "sessionId": "a053fc69-287c-4542-9c2b-c668c7c4d7fd",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9E4B-6483"
+      },
+      "timestamp": "2026-08-31T07:29:57.124Z"
+    },
+    {
+      "id": "c6ced170-cb63-44b9-927b-5b98ba1a1444",
+      "sessionId": "72a3c849-b308-40aa-8cda-b3c50eb3b60e",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:25:16.740Z"
+    },
+    {
+      "id": "6fc9452b-9af8-4e42-858d-a919204cd775",
+      "sessionId": "72a3c849-b308-40aa-8cda-b3c50eb3b60e",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6"
+      },
+      "timestamp": "2026-08-31T07:25:16.725Z"
+    },
+    {
+      "id": "dfa834db-46f2-49c0-8e34-5ebb0286e6b1",
+      "sessionId": "72a3c849-b308-40aa-8cda-b3c50eb3b60e",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9E4B-6483"
+      },
+      "timestamp": "2026-08-31T07:25:16.724Z"
+    },
+    {
+      "id": "813dda76-a3e1-4127-a573-9e23c7259ea0",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:24:13.986Z"
+    },
+    {
+      "id": "3069cf69-f3f0-437c-b316-77f63a133cad",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:24:12.735Z"
+    },
+    {
+      "id": "99a27029-ea6f-46e6-b1dd-5ae2a2117526",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:24:11.759Z"
+    },
+    {
+      "id": "3362e673-98d9-476d-8657-8f5122d827bf",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:24:10.068Z"
+    },
+    {
+      "id": "c7a0227c-7767-4b64-b2e5-fa244f4157e2",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T07:23:51.453Z"
+    },
+    {
+      "id": "265226e7-7d06-4121-9e62-187115a56a2b",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6"
+      },
+      "timestamp": "2026-08-31T07:23:51.442Z"
+    },
+    {
+      "id": "7d965123-96a5-466c-9561-0475753232f9",
+      "sessionId": "a8550aa9-3a3a-421f-8df1-1bd80e0b555f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9E4B-6483"
+      },
+      "timestamp": "2026-08-31T07:23:51.441Z"
+    },
+    {
+      "id": "f5b60803-8734-4791-abe8-a045cf3fda14",
+      "sessionId": "14707c94-f782-41fa-98b4-d4b7267df067",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T07:23:38.858Z"
+    },
+    {
+      "id": "dbe330f7-c323-479e-987b-352b45ac037a",
+      "sessionId": "14707c94-f782-41fa-98b4-d4b7267df067",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "b6e0669d-2e19-41fe-a1fc-52c196251bc6"
+      },
+      "timestamp": "2026-08-31T07:23:38.848Z"
+    },
+    {
+      "id": "16f25573-dbb7-4f26-a76b-0237a215649b",
+      "sessionId": "14707c94-f782-41fa-98b4-d4b7267df067",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "OnePlus NE2211",
+        "supportCode": "9E4B-6483"
+      },
+      "timestamp": "2026-08-31T07:23:38.847Z"
+    },
+    {
+      "id": "f3e1e718-09d8-4ba5-b5a3-7b48d384580a",
+      "sessionId": "00f7b83c-3eb0-4c39-a931-adff817d2194",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T05:31:17.211Z"
+    },
+    {
+      "id": "b9cbfe17-11a4-4ad3-aa84-54d442db07b8",
+      "sessionId": "00f7b83c-3eb0-4c39-a931-adff817d2194",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "0001198f-d84f-4d0c-bbb6-a2d33a2e4ca6"
+      },
+      "timestamp": "2026-08-31T05:31:17.182Z"
+    },
+    {
+      "id": "6812b24b-7247-4e4f-8c4e-aa0cd76c0343",
+      "sessionId": "00f7b83c-3eb0-4c39-a931-adff817d2194",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:31:17.180Z"
+    },
+    {
+      "id": "e98715ed-fb4f-4536-832b-f135053176f7",
+      "sessionId": "1557319a-8602-4345-a4d9-4dd6ae72f244",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T05:31:06.317Z"
+    },
+    {
+      "id": "a46ac55b-63a7-413b-8d07-a9ce8e063409",
+      "sessionId": "1557319a-8602-4345-a4d9-4dd6ae72f244",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T05:31:06.294Z"
+    },
+    {
+      "id": "b6c3f147-cb2b-4dcf-8c4f-5a731c97c79e",
+      "sessionId": "1557319a-8602-4345-a4d9-4dd6ae72f244",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:31:06.289Z"
+    },
+    {
+      "id": "af2ab7a3-536a-4fda-9504-3fe59fc9a581",
+      "sessionId": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "actor": "testadmin_1788154199868@support.com",
+      "eventType": "SESSION_ENDED",
+      "metadata": {
+        "endedAt": "2026-08-31T05:30:00.098Z"
+      },
+      "timestamp": "2026-08-31T05:30:00.135Z"
+    },
+    {
+      "id": "aa8d743c-6918-4c1e-8ad7-4ccd862a5227",
+      "sessionId": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "actor": "testadmin_1788154199868@support.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T05:30:00.059Z"
+    },
+    {
+      "id": "2233fc49-e321-450b-804b-ef560094f118",
+      "sessionId": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "actor": "testadmin_1788154199868@support.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T05:30:00.046Z"
+    },
+    {
+      "id": "5621d84d-11f1-41d3-b77a-39d9a9daebd9",
+      "sessionId": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "actor": "testadmin_1788154199868@support.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "2387cdaf-ede9-498d-a941-2c307f2e6497"
+      },
+      "timestamp": "2026-08-31T05:29:59.968Z"
+    },
+    {
+      "id": "9e7e87ac-4d7f-4184-a01a-69253b6d861f",
+      "sessionId": "4763fb0b-0059-43ca-94f1-a243d68537f6",
+      "actor": "testadmin_1788154199868@support.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:29:59.965Z"
+    },
+    {
+      "id": "e57d505a-24c2-40e7-982e-7055e8a6d9c7",
+      "sessionId": "045d3509-56a2-4bc2-898e-73fbb9a76eee",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T05:25:43.192Z"
+    },
+    {
+      "id": "edc08c9a-60e2-4776-977b-1be9e10bb01f",
+      "sessionId": "045d3509-56a2-4bc2-898e-73fbb9a76eee",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T05:25:43.148Z"
+    },
+    {
+      "id": "1741fd92-561a-4ab6-aea0-56dd45d2b22c",
+      "sessionId": "045d3509-56a2-4bc2-898e-73fbb9a76eee",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:25:43.147Z"
+    },
+    {
+      "id": "297d0d29-269c-4284-ab6e-87e203e1e31d",
+      "sessionId": "cd3ab69e-f7a2-4dd9-97ef-9584ae269f17",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T05:24:32.504Z"
+    },
+    {
+      "id": "b0591309-712b-45bc-87b6-092292b7c2ba",
+      "sessionId": "cd3ab69e-f7a2-4dd9-97ef-9584ae269f17",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:24:32.503Z"
+    },
+    {
+      "id": "53f96f22-f03e-4bd0-a191-d50a090a893b",
+      "sessionId": "5617fa49-19b8-449a-93e5-4de6d78a470f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T05:22:17.233Z"
+    },
+    {
+      "id": "ab46ffbf-e7d5-4ec7-97b8-fc7fac92717e",
+      "sessionId": "5617fa49-19b8-449a-93e5-4de6d78a470f",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:22:17.232Z"
+    },
+    {
+      "id": "8fbbcb5f-5791-4906-835c-d943215499a5",
+      "sessionId": "cbcb4f08-99c0-440b-a79b-137b3cbc211c",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T05:22:00.394Z"
+    },
+    {
+      "id": "d6663a6c-36f0-465c-9d9a-4699f42c4fa2",
+      "sessionId": "cbcb4f08-99c0-440b-a79b-137b3cbc211c",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:22:00.393Z"
+    },
+    {
+      "id": "9c446fe4-ad19-4173-b108-5efee219db1e",
+      "sessionId": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "actor": "testadmin_1788153497942@support.com",
+      "eventType": "SESSION_ENDED",
+      "metadata": {
+        "endedAt": "2026-08-31T05:18:18.029Z"
+      },
+      "timestamp": "2026-08-31T05:18:18.045Z"
+    },
+    {
+      "id": "1dbea64e-3bb2-4c44-ab16-db56515da954",
+      "sessionId": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "actor": "testadmin_1788153497942@support.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T05:18:18.026Z"
+    },
+    {
+      "id": "b25de1ab-5e67-48e5-92ec-6ce534120f6f",
+      "sessionId": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "actor": "testadmin_1788153497942@support.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T05:18:18.009Z"
+    },
+    {
+      "id": "29206e9d-dc1f-49a2-867c-fcced19aa6c5",
+      "sessionId": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "actor": "testadmin_1788153497942@support.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "0001198f-d84f-4d0c-bbb6-a2d33a2e4ca6"
+      },
+      "timestamp": "2026-08-31T05:18:17.992Z"
+    },
+    {
+      "id": "52816e40-2c4f-4277-92ab-3abf21b186cf",
+      "sessionId": "cea1cb47-fb0d-4e00-8e05-c22e6d643039",
+      "actor": "testadmin_1788153497942@support.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T05:18:17.991Z"
+    },
+    {
+      "id": "17d068e3-b981-4347-9ce2-e1b402348b02",
+      "sessionId": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "actor": "testadmin_1788152392340@support.com",
+      "eventType": "SESSION_ENDED",
+      "metadata": {
+        "endedAt": "2026-08-31T04:59:52.434Z"
+      },
+      "timestamp": "2026-08-31T04:59:52.446Z"
+    },
+    {
+      "id": "4e6537b2-8825-40e1-b850-3fab1cfc39df",
+      "sessionId": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "actor": "testadmin_1788152392340@support.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T04:59:52.430Z"
+    },
+    {
+      "id": "a2838729-8f7a-44cf-aebc-c6751dac32fa",
+      "sessionId": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "actor": "testadmin_1788152392340@support.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T04:59:52.414Z"
+    },
+    {
+      "id": "97ba78e1-e4bf-4edf-8393-16350a57767b",
+      "sessionId": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "actor": "testadmin_1788152392340@support.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "5b27af32-2543-4bd0-8900-bb4046b9f70e"
+      },
+      "timestamp": "2026-08-31T04:59:52.383Z"
+    },
+    {
+      "id": "7a30a461-e00a-431f-b2d8-4d084db9758b",
+      "sessionId": "37de8e43-dcbc-4be8-a07a-e8c2f1d50641",
+      "actor": "testadmin_1788152392340@support.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Galaxy A15",
+        "supportCode": "TEST-1048"
+      },
+      "timestamp": "2026-08-31T04:59:52.382Z"
+    },
+    {
+      "id": "93bec27f-d0e1-4e33-85c7-e9cea95ade9b",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "2DAA-A866"
+      },
+      "timestamp": "2026-08-31T08:25:58.465Z"
+    },
+    {
+      "id": "f1c77010-1039-4499-ab74-629b072aa3eb",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4"
+      },
+      "timestamp": "2026-08-31T08:25:58.466Z"
+    },
+    {
+      "id": "a41e8a88-f029-4e4a-9a6b-b5f9a3e2f243",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:25:58.489Z"
+    },
+    {
+      "id": "437d5503-3704-4233-9215-8442ec52e870",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:26:04.545Z"
+    },
+    {
+      "id": "861d16ce-15dd-4165-84b0-848395cd9932",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:26:05.443Z"
+    },
+    {
+      "id": "0fca6356-bbbb-479b-add0-070836101780",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:27:14.524Z"
+    },
+    {
+      "id": "edef6b0e-5449-4b45-988a-2506640bc8dd",
+      "sessionId": "05073625-173e-4dd7-be15-348902ac04a1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:27:22.302Z"
+    },
+    {
+      "id": "038c99f6-99c0-4a7c-a889-9aa8588b1814",
+      "sessionId": "2b5b2332-244a-4527-813e-d7e6a0e33d54",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "2DAA-A866"
+      },
+      "timestamp": "2026-08-31T08:27:49.706Z"
+    },
+    {
+      "id": "1648b902-17c7-48e9-a4bc-6481e553da71",
+      "sessionId": "2b5b2332-244a-4527-813e-d7e6a0e33d54",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4"
+      },
+      "timestamp": "2026-08-31T08:27:49.708Z"
+    },
+    {
+      "id": "f2aa8f5a-4a24-44d0-8c73-7415893bdd94",
+      "sessionId": "a54c5dd6-021f-46f8-94ee-3469601285d1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "2DAA-A866"
+      },
+      "timestamp": "2026-08-31T08:27:51.101Z"
+    },
+    {
+      "id": "cdc63fd1-31f3-4e63-ada3-3cd933f3880b",
+      "sessionId": "a54c5dd6-021f-46f8-94ee-3469601285d1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "f296ea75-20ad-45a9-afa0-cd424884cec4"
+      },
+      "timestamp": "2026-08-31T08:27:51.103Z"
+    },
+    {
+      "id": "61aa9f38-2427-4223-97a8-1fe6152ea327",
+      "sessionId": "2b5b2332-244a-4527-813e-d7e6a0e33d54",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:27:51.455Z"
+    },
+    {
+      "id": "056603bd-36ef-4b9d-835b-7bfcf6625fa2",
+      "sessionId": "a54c5dd6-021f-46f8-94ee-3469601285d1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:27:53.490Z"
+    },
+    {
+      "id": "ab70bf1c-d264-498c-835b-730346f584b3",
+      "sessionId": "a54c5dd6-021f-46f8-94ee-3469601285d1",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:28:31.789Z"
+    },
+    {
+      "id": "eee88441-27cc-428a-8b3d-4fca78f118dd",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "C5E8-D31F"
+      },
+      "timestamp": "2026-08-31T08:39:54.328Z"
+    },
+    {
+      "id": "34fcb7f9-f981-4678-9b51-9b2fb707ee02",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3"
+      },
+      "timestamp": "2026-08-31T08:39:54.329Z"
+    },
+    {
+      "id": "7d82e8d1-8691-4e08-83c0-db04bd9632e4",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:39:54.338Z"
+    },
+    {
+      "id": "eff1e3ce-f090-4efb-b09b-882469d0d5d6",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:40:43.754Z"
+    },
+    {
+      "id": "9089c0eb-6cd0-4689-91e9-2ec7d5ea6435",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:41:45.429Z"
+    },
+    {
+      "id": "df753cfd-03f3-46db-97fb-6818191c1365",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:24.480Z"
+    },
+    {
+      "id": "9a1e6bb3-16c4-4798-98c0-dd0ea0fe449a",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_DISABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:27.823Z"
+    },
+    {
+      "id": "03b430f1-10fc-46d7-b16c-340470fa6a84",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:28.888Z"
+    },
+    {
+      "id": "f66a270e-687e-4796-8017-cae31b6092bc",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_DISABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:31.102Z"
+    },
+    {
+      "id": "669709d2-0943-4b42-9cf7-65f42ba511e9",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_ENABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:31.971Z"
+    },
+    {
+      "id": "5ae889bf-2c3e-45a6-a15f-88fef9c72e08",
+      "sessionId": "391d28c3-5d09-467b-afd3-2415492371bc",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_ENDED",
+      "metadata": {
+        "endedAt": "2026-08-31T08:42:33.002Z"
+      },
+      "timestamp": "2026-08-31T08:42:33.003Z"
+    },
+    {
+      "id": "00d0d1c1-5b7d-49ae-9c9f-f65c3e2c6bff",
+      "sessionId": "2b159f3d-4acc-4ef8-b82d-3aa12fc2f4d4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "C5E8-D31F"
+      },
+      "timestamp": "2026-08-31T08:42:35.379Z"
+    },
+    {
+      "id": "fea4509e-36b0-458d-b2bb-17db9e0715a6",
+      "sessionId": "2b159f3d-4acc-4ef8-b82d-3aa12fc2f4d4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3"
+      },
+      "timestamp": "2026-08-31T08:42:35.380Z"
+    },
+    {
+      "id": "02f83210-61b6-487f-8273-32019597e8ec",
+      "sessionId": "2b159f3d-4acc-4ef8-b82d-3aa12fc2f4d4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_RESUMED",
+      "metadata": {
+        "mode": "view"
+      },
+      "timestamp": "2026-08-31T08:42:35.394Z"
+    },
+    {
+      "id": "0146d43b-4e59-4e7c-8eff-cc3e0818d02f",
+      "sessionId": "2b159f3d-4acc-4ef8-b82d-3aa12fc2f4d4",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VANISH_DISABLED",
+      "metadata": {
+        "durationHours": 3
+      },
+      "timestamp": "2026-08-31T08:42:36.616Z"
+    },
+    {
+      "id": "e46f9cf2-8ee7-40fb-b346-84ad85959450",
+      "sessionId": "eff96cc3-6b3f-4213-b0f1-ad8307962961",
+      "actor": "admin@remotesupport.com",
+      "eventType": "SESSION_STARTED",
+      "metadata": {
+        "deviceName": "Vivo V2545",
+        "supportCode": "C5E8-D31F"
+      },
+      "timestamp": "2026-08-31T08:43:16.422Z"
+    },
+    {
+      "id": "fea874ee-eaf7-4323-a6a6-aef1da615b22",
+      "sessionId": "eff96cc3-6b3f-4213-b0f1-ad8307962961",
+      "actor": "admin@remotesupport.com",
+      "eventType": "VIEW_STARTED",
+      "metadata": {
+        "deviceId": "d46f6ee0-b3fb-4843-a0b6-5f206fb928c3"
+      },
+      "timestamp": "2026-08-31T08:43:16.422Z"
+    },
+    {
+      "id": "cfb80844-291d-48cc-ab1e-6882198e9b4a",
+      "sessionId": "eff96cc3-6b3f-4213-b0f1-ad8307962961",
+      "actor": "admin@remotesupport.com",
+      "eventType": "CONTROL_STARTED",
+      "metadata": {
+        "mode": "control"
+      },
+      "timestamp": "2026-08-31T08:43:16.436Z"
+    }
+  ]
+}
