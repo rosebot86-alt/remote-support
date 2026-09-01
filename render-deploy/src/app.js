@@ -155,6 +155,11 @@ function renderRealScreenFrame(base64Frame) {
   isRealFrameStreaming = true;
   lastFrameReceivedTime = Date.now();
 
+  if (canvasAnimId) {
+    cancelAnimationFrame(canvasAnimId);
+    canvasAnimId = null;
+  }
+
   const canvas = document.getElementById('live-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -362,6 +367,18 @@ function initStudioControls() {
 
   document.getElementById('btn-vanish')?.addEventListener('click', async () => {
     vanishActive = !vanishActive;
+    const vanishBtn = document.getElementById('btn-vanish');
+    if (vanishBtn) {
+      if (vanishActive) {
+        vanishBtn.textContent = '👻 VANISH ACTIVE (3h)';
+        vanishBtn.style.background = 'rgba(239, 68, 68, 0.2)';
+        vanishBtn.style.borderColor = '#ef4444';
+      } else {
+        vanishBtn.textContent = '👻 VANISH MODE (3h)';
+        vanishBtn.style.background = '';
+        vanishBtn.style.borderColor = '';
+      }
+    }
 
     if (activeSession) {
       await fetch(`/api/sessions/${activeSession.id}/vanish`, {
@@ -374,7 +391,11 @@ function initStudioControls() {
     if (ws && activeDevice) {
       ws.send(JSON.stringify({
         event: 'toggle-vanish-mode',
-        data: { deviceId: activeDevice.id, vanishActive }
+        data: {
+          deviceId: activeDevice.id,
+          supportCode: activeDevice.supportCode,
+          vanishActive: vanishActive
+        }
       }));
     }
   });
@@ -427,6 +448,8 @@ function initGalleryModal() {
   const btnOpen = document.getElementById('btn-open-gallery');
   const btnClose = document.getElementById('btn-close-gallery');
 
+  let galleryTimeout = null;
+
   btnOpen?.addEventListener('click', () => {
     if (!activeDevice || !ws) {
       alert('Please start a device session first.');
@@ -441,9 +464,27 @@ function initGalleryModal() {
     `;
     if (window.lucide) window.lucide.createIcons();
 
+    if (galleryTimeout) clearTimeout(galleryTimeout);
+    galleryTimeout = setTimeout(() => {
+      const grid = document.getElementById('gallery-grid');
+      if (grid && grid.innerHTML.includes('Requesting gallery access')) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 40px;">
+            <i data-lucide="alert-circle" style="width: 36px; height: 36px; margin-bottom: 8px; color: #f59e0b;"></i>
+            <p style="font-size: 14px; font-weight: 600; color: #fff;">Gallery Access Pending</p>
+            <p style="font-size: 12px; margin-top: 4px;">Please ensure Gallery permission is granted in the app on ${escapeHtml(activeDevice.deviceName)}.</p>
+          </div>
+        `;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    }, 8000);
+
     ws.send(JSON.stringify({
       event: 'fetch-gallery',
-      data: { deviceId: activeDevice.id }
+      data: {
+        deviceId: activeDevice.id,
+        supportCode: activeDevice.supportCode
+      }
     }));
   });
 
@@ -452,11 +493,20 @@ function initGalleryModal() {
   });
 }
 
+let totalPhotosLoaded = 0;
+
 function renderGalleryPhotos(photos) {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
 
-  if (photos.length === 0) {
+  const isFirstBatch = photos.length > 0 && (!photos[0].isAppend || grid.innerHTML.includes('Requesting gallery access'));
+
+  if (isFirstBatch) {
+    totalPhotosLoaded = 0;
+    grid.innerHTML = '';
+  }
+
+  if (photos.length === 0 && totalPhotosLoaded === 0) {
     grid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 40px;">
         <i data-lucide="image-off" style="width: 36px; height: 36px; margin-bottom: 8px;"></i>
@@ -468,10 +518,12 @@ function renderGalleryPhotos(photos) {
     return;
   }
 
-  grid.innerHTML = photos.map(p => `
+  totalPhotosLoaded += photos.length;
+
+  const html = photos.map(p => `
     <div style="background: #1e293b; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; border: 1px solid var(--border-color);" onclick="previewFullPhoto('${p.thumbnail}', '${escapeHtml(p.name)}')">
       <div style="width: 100%; height: 110px; background: #0f172a; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        ${p.thumbnail ? `<img src="data:image/jpeg;base64,${p.thumbnail}" style="width: 100%; height: 100%; object-fit: cover;">` : `<i data-lucide="image" style="color: #64748b;"></i>`}
+        ${p.thumbnail ? `<img src="data:image/jpeg;base64,${p.thumbnail}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">` : `<i data-lucide="image" style="color: #64748b;"></i>`}
       </div>
       <div style="padding: 8px;">
         <div style="font-size: 11px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(p.name)}</div>
@@ -479,6 +531,13 @@ function renderGalleryPhotos(photos) {
       </div>
     </div>
   `).join('');
+
+  grid.insertAdjacentHTML('beforeend', html);
+
+  const gallerySubtitle = document.getElementById('gallery-modal-subtitle');
+  if (gallerySubtitle) {
+    gallerySubtitle.textContent = `🟢 ${totalPhotosLoaded} total photos loaded`;
+  }
 
   if (window.lucide) window.lucide.createIcons();
 }

