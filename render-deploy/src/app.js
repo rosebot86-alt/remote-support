@@ -228,12 +228,15 @@ function renderDevicesGrid(devices) {
           </span>
         </div>
 
-        <div class="device-actions-row">
-          <button onclick="startSession('${device.id}', 'view')" class="btn btn-primary" ${!isOnline ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
-            <i data-lucide="eye"></i> VIEW STREAM
+        <div class="device-actions-row" style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button onclick="startSession('${device.id}', 'view')" class="btn btn-primary" style="flex: 1;" ${!isOnline ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+            <i data-lucide="eye"></i> VIEW
           </button>
-          <button onclick="startSession('${device.id}', 'control')" class="btn btn-secondary" ${!isOnline ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+          <button onclick="startSession('${device.id}', 'control')" class="btn btn-secondary" style="flex: 1;" ${!isOnline ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
             <i data-lucide="mouse-pointer"></i> CONTROL
+          </button>
+          <button onclick="deleteDevice('${device.id}', '${escapeHtml(device.deviceName)}')" class="btn btn-danger" style="padding: 8px 12px;" title="Delete device from console">
+            <i data-lucide="trash-2"></i>
           </button>
         </div>
       </div>
@@ -242,6 +245,26 @@ function renderDevicesGrid(devices) {
 
   if (window.lucide) window.lucide.createIcons();
 }
+
+window.deleteDevice = async function(deviceId, deviceName) {
+  if (!confirm(`Are you sure you want to remove '${deviceName}' from the dashboard?`)) {
+    return;
+  }
+  try {
+    const res = await fetch(`/api/devices/${deviceId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (res.ok) {
+      fetchDevices();
+    } else {
+      const data = await res.json();
+      alert(data.error || 'Failed to delete device');
+    }
+  } catch (err) {
+    alert(`Error: ${err.message}`);
+  }
+};
 
 async function startSession(deviceId, mode = 'view') {
   try {

@@ -360,6 +360,22 @@ const server = http.createServer(async (req, res) => {
       return sendJson(200, { devices });
     }
 
+    if (pathname.startsWith('/api/devices/') && req.method === 'DELETE') {
+      const user = getAuthUser();
+      if (!user) return sendJson(401, { error: 'Unauthorized' });
+      const deviceId = pathname.replace('/api/devices/', '');
+      const deleted = db.deleteDevice(deviceId);
+      
+      broadcastToAdmins('device-status-changed', { deviceId, status: 'deleted' });
+      db.logAuditEvent({
+        sessionId: 'MANAGEMENT',
+        actor: user.email,
+        eventType: 'DEVICE_DELETED',
+        metadata: { deviceId }
+      });
+      return sendJson(200, { success: true, message: 'Device deleted from console' });
+    }
+
     if (pathname.startsWith('/api/devices/') && req.method === 'GET') {
       const id = pathname.replace('/api/devices/', '');
       const device = db.getDeviceById(id);

@@ -145,6 +145,16 @@ class JSONDatabase {
     return device;
   }
 
+  deleteDevice(id) {
+    const initialLength = this.data.devices.length;
+    this.data.devices = this.data.devices.filter(d => d.id !== id && d.supportCode !== id);
+    if (this.data.devices.length !== initialLength) {
+      this.save();
+      return true;
+    }
+    return false;
+  }
+
   // Sessions
   createSession({ deviceId, adminId, mode = 'view' }) {
     const now = new Date();
