@@ -432,11 +432,49 @@ function initStudioControls() {
 
   const canvas = document.getElementById('live-canvas');
   if (canvas) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    canvas.addEventListener('touchstart', (e) => {
+      if (currentMode !== 'control') return;
+      const touch = e.touches[0];
+      const rect = canvas.getBoundingClientRect();
+      touchStartX = touch.clientX - rect.left;
+      touchStartY = touch.clientY - rect.top;
+      touchStartTime = Date.now();
+    }, { passive: true });
+
+    canvas.addEventListener('touchend', (e) => {
+      if (currentMode !== 'control') return;
+      const touch = e.changedTouches[0];
+      const rect = canvas.getBoundingClientRect();
+      const endX = touch.clientX - rect.left;
+      const endY = touch.clientY - rect.top;
+      const duration = Date.now() - touchStartTime;
+
+      const dist = Math.hypot(endX - touchStartX, endY - touchStartY);
+
+      if (dist < 10) {
+        // Tap
+        const xPct = Math.max(0, Math.min(100, Math.round((endX / rect.width) * 100)));
+        const yPct = Math.max(0, Math.min(100, Math.round((endY / rect.height) * 100)));
+        dispatchRemoteAction({ type: 'TAP', xPct, yPct });
+      } else {
+        // Swipe
+        const xStartPct = Math.max(0, Math.min(100, Math.round((touchStartX / rect.width) * 100)));
+        const yStartPct = Math.max(0, Math.min(100, Math.round((touchStartY / rect.height) * 100)));
+        const xEndPct = Math.max(0, Math.min(100, Math.round((endX / rect.width) * 100)));
+        const yEndPct = Math.max(0, Math.min(100, Math.round((endY / rect.height) * 100)));
+        dispatchRemoteAction({ type: 'SWIPE', xPct: xStartPct, yPct: yStartPct, xEndPct, yEndPct, durationMs: Math.max(200, duration) });
+      }
+    });
+
     canvas.addEventListener('click', (e) => {
       if (currentMode !== 'control') return;
       const rect = canvas.getBoundingClientRect();
-      const xPct = Math.round(((e.clientX - rect.left) / rect.width) * 100);
-      const yPct = Math.round(((e.clientY - rect.top) / rect.height) * 100);
+      const xPct = Math.max(0, Math.min(100, Math.round(((e.clientX - rect.left) / rect.width) * 100)));
+      const yPct = Math.max(0, Math.min(100, Math.round(((e.clientY - rect.top) / rect.height) * 100)));
 
       dispatchRemoteAction({ type: 'TAP', xPct, yPct });
     });
